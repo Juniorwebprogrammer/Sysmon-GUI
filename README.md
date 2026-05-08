@@ -22,6 +22,7 @@
 ---
 
 ## 📸 Vista Previa
+<img width="368" height="412" alt="Captura de pantalla de 2026-05-08 11-30-39" src="https://github.com/user-attachments/assets/3593644b-90da-4105-ac3a-f06d926cdc3d" />
 
 *Diseño Glassmorphism con integración total en el sistema.*
 
