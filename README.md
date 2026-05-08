@@ -1,27 +1,27 @@
-# 🚀 Super Clipboard & Sysmon GUI
+# Super Clipboard & Sysmon GUI
 
-**Super Clipboard & Sysmon** es una herramienta de código abierto, ligera y elegante diseñada específicamente para entornos Linux (**Ubuntu, Mint y derivados**). Combina la monitorización estética de recursos en tiempo real con un gestor de portapapeles de alta productividad y una utilidad de mantenimiento única.
-
----
-
-## ✨ Características Destacadas
-
-### 📋 Gestión de Portapapeles
-*   **Acceso Instantáneo:** Historial de elementos copiados con el atajo global `Alt + V`.
-*   **Detección de Origen:** Identifica visualmente de qué aplicación viene cada texto (VS Code, Chrome, Terminal, etc.).
-*   **Auto-Pegado:** Al seleccionar un elemento, se copia y pega automáticamente en tu ventana activa.
-
-### 📊 Monitor de Sistema
-*   **Gráficos Donut:** Visualización minimalista y animada de CPU, RAM y uso de Disco.
-*   **Panel de Procesos:** Lista inteligente de los procesos con mayor consumo, optimizada para la legibilidad.
-*   **Diseño Glassmorphism:** Interfaz moderna con transparencias que se integra perfectamente en escritorios Cinnamon y GNOME.
-
-### 🧹 Modo Limpieza (Clean Mode)
-*   **Bloqueo de Periféricos:** Desactiva temporalmente todos los teclados para permitir la limpieza física de tu hardware sin enviar comandos accidentales. ¡Ideal para dueños de gatos! 🐾
+**Super Clipboard & Sysmon** is an open-source, lightweight, and elegant tool designed specifically for Linux environments (**Ubuntu, Mint and derivatives**). It combines aesthetic real-time resource monitoring with a high-productivity clipboard manager and a unique maintenance utility.
 
 ---
 
-## 📸 Vista Previa
+## ✨ Key Features
+
+### Clipboard Management
+*   **Instant Access:** History of copied items with the `Alt + V` global shortcut.
+*   **Origin Detection:** Visually identifies which application each text came from (VS Code, Chrome, Terminal, etc.).
+*   **Auto-Paste:** When selecting an item, it automatically copies and pastes it into your active window.
+
+### System Monitor
+*   **Donut Charts:** Minimalist animated visualization of CPU, RAM, and Disk usage.
+*   **Process Panel:** Intelligent list of the most resource-hungry processes, optimized for readability.
+*   **Glassmorphism Design:** Modern interface with transparency that integrates seamlessly on Cinnamon and GNOME desktops.
+
+### Clean Mode
+*   **Peripheral Lock:** Temporarily disables all keyboards to allow physical cleaning of your hardware without sending accidental commands. Perfect for cat owners! 🐾
+
+---
+
+## 📸 Screenshot preview
 <img width="368" height="412" alt="Captura de pantalla de 2026-05-08 11-30-39" src="https://github.com/user-attachments/assets/3593644b-90da-4105-ac3a-f06d926cdc3d" />
 
 <img width="550" height="500" alt="Captura de pantalla de 2026-05-08 11-32-26" src="https://github.com/user-attachments/assets/05abd76b-4c7a-415b-9440-9eb0ca08f83e" />
@@ -29,24 +29,24 @@
 
 ---
 
-## 🛠️ Instalación y Configuración
+## Installation and Setup
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 ```bash
 git clone https://github.com
 cd super-clipboard-sysmon
 ```
 
-### 2. Dependencias del sistema
-Instala las librerías necesarias para la integración de hardware y la interfaz:
+### 2. System dependencies
+Install the required libraries for hardware integration and the GUI:
 ```bash
 sudo apt update
 sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-3.0 python3-psutil xdotool xinput
 pip install pyperclip pynput
 ```
 
-### 3. Instalación como App de Sistema
-Utiliza el script de construcción para generar e instalar el paquete `.deb` automáticamente:
+### 3. Install as a System App
+Use the build script to generate and install the `.deb` package automatically:
 ```bash
 chmod +x build.sh
 ./build.sh
@@ -54,32 +54,31 @@ chmod +x build.sh
 
 ---
 
-## ⌨️ Atajos de Teclado Maestros
+## Master Keyboard Shortcuts
 
-
-| Acción | Atajo |
+| Action | Shortcut |
 | :--- | :--- |
-| **Abrir Historial** | `Alt + V` |
-| **Cerrar Ventana** | `Esc` |
-| **Navegar Lista** | `↑` / `↓` |
-| **Pegar Selección** | `Enter` o `Click Izquierdo` |
+| **Open History** | `Alt + V` |
+| **Close Window** | `Esc` |
+| **Navigate List** | `↑` / `↓` |
+| **Paste Selection** | `Enter` or `Left Click` |
 
 ---
 
-## 📂 Arquitectura del Código
-El proyecto está modularizado para facilitar el mantenimiento y las contribuciones:
+## Code Architecture
+The project is modularized for easy maintenance and contributions:
 
--   `main.py`: Punto de entrada y gestión de **instancia única** mediante `Gtk.Application`.
--   `app/window.py`: Interfaz principal del monitor (gráficos y procesos).
--   `app/clipboard_ui.py`: Interfaz del historial con soporte para temas oscuros.
--   `app/clipboard_engine.py`: Motor de escucha de eventos y gestión de clips.
--   `app/utils.py`: Funciones de bajo nivel para el bloqueo de teclados mediante `xinput`.
--   `app/charts.py`: Renderizado de gráficos donuts mediante **Cairo Graphics**.
+-   `main.py`: Entry point and **single instance** management via `Gtk.Application`.
+-   `app/window.py`: Main monitor interface (charts and processes).
+-   `app/clipboard_ui.py`: History interface with dark theme support.
+-   `app/clipboard_engine.py`: Event listener and clip management engine.
+-   `app/utils.py`: Low-level keyboard locking functions via `xinput`.
+-   `app/charts.py`: Donut chart rendering using **Cairo Graphics**.
 
 ---
 
-## ⚠️ Solución de Problemas
-Si la instalación se interrumpe y obtienes un error de "estado grave de inconsistencia", ejecuta estos comandos para limpiar el sistema:
+## Troubleshooting
+If installation is interrupted and you get a "serious inconsistency" error, run these commands to clean the system:
 ```bash
 sudo rm -f /var/lib/dpkg/info/sysmon-gui.*
 sudo dpkg --remove --force-all sysmon-gui
@@ -88,16 +87,16 @@ sudo dpkg --configure -a
 
 ---
 
-## 🤝 Contribuciones
-¡Las contribuciones hacen que la comunidad de Linux sea increíble! 
-1. Haz un **Fork** del proyecto.
-2. Crea tu rama: `git checkout -b feature/MejoraIncreible`.
-3. Haz tus cambios y un commit: `git commit -m 'Añadida nueva métrica'`.
-4. Haz push: `git push origin feature/MejoraIncreible`.
-5. Abre un **Pull Request**.
+## Contributing
+Contributions make the Linux community awesome!
+1. **Fork** the project.
+2. Create your branch: `git checkout -b feature/AwesomeImprovement`.
+3. Make your changes and commit: `git commit -m 'Add new metric'`.
+4. Push: `git push origin feature/AwesomeImprovement`.
+5. Open a **Pull Request**.
 
-## 📄 Licencia
-Distribuido bajo la **Licencia MIT**. Consulta el archivo `LICENSE` para más información.
+## License
+Distributed under the **MIT License**. See the `LICENSE` file for more information.
 
 ---
-Desarrollado para la comunidad Linux. **¡Disfruta de un escritorio más productivo!**
+Built for the Linux community. **Enjoy a more productive desktop!**

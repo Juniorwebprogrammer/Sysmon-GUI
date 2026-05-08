@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sysmon GUI
+Comment=System monitor and clipboard manager
+Exec=sysmon-gui
+Icon=sysmon-gui
+Terminal=false
+Categories=System;Monitor;
+StartupWMClass=sysmon-gui

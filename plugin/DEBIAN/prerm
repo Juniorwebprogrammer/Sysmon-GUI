@@ -1,0 +1,10 @@
+#!/bin/bash
+# Find the Python process running your APP, not the installer.
+# Filter by the installation path which is unique.
+PID=$(ps aux | grep "/usr/lib/sysmon-gui/main.py" | grep -v grep | awk '{print $2}')
+
+if [ ! -z "$PID" ]; then
+    echo "Closing Sysmon GUI process (PID: $PID)..."
+    kill -9 $PID
+fi
+exit 0

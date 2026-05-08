@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /usr/lib/sysmon-gui
+exec python3 main.py "$@"
