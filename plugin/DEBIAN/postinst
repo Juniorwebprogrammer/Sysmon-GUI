@@ -2,7 +2,6 @@
 chmod +x /usr/bin/sysmon-gui
 gtk-update-icon-cache -f -t /usr/share/icons/hicolor 2>/dev/null || true
 update-desktop-database /usr/share/applications 2>/dev/null || true
-# Force refresh on install too
 touch /usr/share/applications
 echo "[sysmon] Installed successfully."
 exit 0

@@ -3,7 +3,8 @@ Version: 1.0.0
 Section: utils
 Priority: optional
 Architecture: all
-Depends: python3 (>= 3.8), python3-gi, python3-cairo, gir1.2-gtk-3.0, gir1.2-gdkpixbuf-2.0, python3-psutil
+Depends: python3 (>= 3.8), python3-gi, python3-cairo, gir1.2-gtk-3.0, gir1.2-gdkpixbuf-2.0, python3-psutil, python3-pyperclip, xdotool, xinput, python3-pynput
 Maintainer: Your Name <tu@email.com>
 Description: System monitor with graphical interface
  Tray applet with donut charts for CPU, RAM and disk.
+ Includes clipboard manager with Alt+V global hotkey.
